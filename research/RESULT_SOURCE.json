@@ -1,0 +1,8 @@
+{
+  "source_report_sha256": "1734d546aa08db4d6f301afd62affab35bb633e60fa77e07c48824577864d8e2",
+  "comparison_sha256": "fc7ad9ad9703d892a04c330707ccb1be6dd19a722816ebe5238bcb90677f4f45",
+  "recovery_protocol_sha256": "c1d2d59d1154b0e7920e283ea98560d97f296969a97b436cee36a2318453edcb",
+  "final_audit_sha256": "208d148447642c10a478ca235958b42c02640d27faedd3367769b2969d43a3d6",
+  "all_valid": true,
+  "original_spans_verified": 8651
+}

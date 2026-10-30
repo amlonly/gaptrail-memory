@@ -1,0 +1,9 @@
+{
+  "successful_runtime_request_receipts": 575,
+  "metered_actual_requests": 575,
+  "local_receipt_cache_reuses": 223,
+  "pending_or_uncertain_requests": 0,
+  "server_prompt_cache_tokens": 0,
+  "receipt_cache_is_distinct_from_disabled_server_prompt_cache": true,
+  "synthetic_calibration_separated_in_analysis": true
+}

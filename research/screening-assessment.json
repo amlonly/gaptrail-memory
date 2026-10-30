@@ -1,0 +1,19 @@
+{
+  "scope": "Preliminary fixed 12-case-per-family/split cohort; not the separate 48-case development screen",
+  "complete_valid_grading": true,
+  "item_1_exact_search_and_input_reproduction": true,
+  "item_2_source_provenance_protection_and_budget": true,
+  "item_3_metric_by_split": {
+    "development": false,
+    "holdout": true
+  },
+  "item_3_does_not_veto_for_individual_case_or_dataset_regression": true,
+  "item_4_annotated_packed_input_gain": true,
+  "case_and_dataset_regressions_reported_in": "comparison.json",
+  "permanent_gate_unchanged": {
+    "passed": false,
+    "first_failure": "development final-answer macro accuracy did not improve"
+  },
+  "larger_48_case_development_screen_completed": false,
+  "official_admission_or_promotion": false
+}

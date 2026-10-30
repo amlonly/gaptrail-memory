@@ -1,0 +1,11 @@
+feat: publish GapTrail Memory bounded source-grounded query planner
+
+Package the exact32 retrieval dependency closure and frozen v2 planner with
+a loopback-only local model adapter, Add/Search API, owner-checked GPU lock
+launcher, CPU contract/provenance tests, and Chinese operating guide.
+
+Record complete local paired research outcomes: development 43.06% to 43.06%,
+holdout 43.06% to 44.44%, W/L/T 1/0/143 across 144 cases and 288 valid grades.
+The development gain gate did not pass; no official score or promotion is claimed.
+
+Exclude datasets, generated answers, model weights, databases, logs and secrets.

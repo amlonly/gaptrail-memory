@@ -1,0 +1,67 @@
+{
+  "first_pass_including_synthetic_calibration": {
+    "Planner": {
+      "successful_actual_calls": 16,
+      "prompt_tokens": 18288,
+      "completion_tokens": 1440,
+      "request_seconds": 24.514999999897555
+    },
+    "Answer": {
+      "successful_actual_calls": 7,
+      "prompt_tokens": 28629,
+      "completion_tokens": 273,
+      "request_seconds": 14.031999999890104
+    },
+    "Judge": {
+      "successful_actual_calls": 13,
+      "prompt_tokens": 9420,
+      "completion_tokens": 480,
+      "request_seconds": 9.967999999644235
+    }
+  },
+  "recovery_including_synthetic_calibration": {
+    "Planner": {
+      "successful_actual_calls": 238,
+      "prompt_tokens": 392588,
+      "completion_tokens": 32659,
+      "request_seconds": 484.10500000067987
+    },
+    "Answer": {
+      "successful_actual_calls": 176,
+      "prompt_tokens": 717298,
+      "completion_tokens": 23556,
+      "request_seconds": 470.7599999997765
+    },
+    "Judge": {
+      "successful_actual_calls": 161,
+      "prompt_tokens": 177103,
+      "completion_tokens": 14563,
+      "request_seconds": 213.25299999979325
+    }
+  },
+  "total_metered_successful_local_requests": {
+    "Planner": {
+      "successful_actual_calls": 254,
+      "prompt_tokens": 410876,
+      "completion_tokens": 34099,
+      "request_seconds": 508.6200000005774
+    },
+    "Answer": {
+      "successful_actual_calls": 183,
+      "prompt_tokens": 745927,
+      "completion_tokens": 23829,
+      "request_seconds": 484.7919999996666
+    },
+    "Judge": {
+      "successful_actual_calls": 174,
+      "prompt_tokens": 186523,
+      "completion_tokens": 15043,
+      "request_seconds": 223.22099999943748
+    }
+  },
+  "failed_or_lost_request_token_usage": null,
+  "failed_or_lost_request_token_usage_reason": "No successful response receipt; unknown, not zero.",
+  "no_accuracy_denominators_combined_across_attempts": true,
+  "paid_API_cost_usd": 0,
+  "failed_or_lost_first_pass_request_count": 3
+}

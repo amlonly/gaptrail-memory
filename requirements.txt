@@ -1,0 +1,8 @@
+numpy==2.2.6
+fastapi==0.141.1
+uvicorn==0.52.4
+httpx==0.28.1
+pydantic==2.13.4
+transformers==4.53.2
+tokenizers==0.21.4
+torch==2.11.0

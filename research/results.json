@@ -1,0 +1,295 @@
+{
+  "complete_valid_grading": true,
+  "splits": {
+    "development": {
+      "exact32_macro": 0.4305555555555556,
+      "candidate_macro": 0.4305555555555556,
+      "wins": 0,
+      "losses": 0,
+      "ties": 72
+    },
+    "holdout": {
+      "exact32_macro": 0.4305555555555556,
+      "candidate_macro": 0.4444444444444444,
+      "wins": 1,
+      "losses": 0,
+      "ties": 71
+    }
+  },
+  "per_dataset": {
+    "development": {
+      "locomo": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.5833333333333334,
+        "candidate": 0.5833333333333334,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "longmem": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.4166666666666667,
+        "candidate": 0.4166666666666667,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "beam": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.5,
+        "candidate": 0.5,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "clbench": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.0,
+        "candidate": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "persona1": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.8333333333333334,
+        "candidate": 0.8333333333333334,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "persona2": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.25,
+        "candidate": 0.25,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      }
+    },
+    "holdout": {
+      "locomo": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.3333333333333333,
+        "candidate": 0.3333333333333333,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "longmem": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.75,
+        "candidate": 0.75,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "beam": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.5833333333333334,
+        "candidate": 0.6666666666666666,
+        "wins": 1,
+        "losses": 0,
+        "ties": 11
+      },
+      "clbench": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.0,
+        "candidate": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "persona1": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.4166666666666667,
+        "candidate": 0.4166666666666667,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      },
+      "persona2": {
+        "n": 12,
+        "paired_valid": 12,
+        "exact32": 0.5,
+        "candidate": 0.5,
+        "wins": 0,
+        "losses": 0,
+        "ties": 12
+      }
+    }
+  },
+  "planning": {
+    "cases": 144,
+    "query_count_distribution": {
+      "3": 28,
+      "2": 63,
+      "1": 53
+    },
+    "stop_reasons": {
+      "query_budget": 11,
+      "empty_or_repeated_query": 53,
+      "supported_finish": 55,
+      "dominant_original_document_passthrough": 25
+    },
+    "changed_search": 32,
+    "changed_answer_input": 32,
+    "total_queries": 263,
+    "planner_calls": 238,
+    "average_search_seconds": 3.677493055558039
+  },
+  "permanent_gate": {
+    "passed": false,
+    "first_failure": "development final-answer macro accuracy did not improve"
+  },
+  "all_permanent_gate_score_violations": [
+    "development macro final-answer accuracy did not strictly improve"
+  ],
+  "answer_regressions": [],
+  "coverage_regressions": [],
+  "input_coverage_gains": [
+    {
+      "dataset": "beam",
+      "id": "10:event_ordering:1",
+      "split": "holdout",
+      "baseline": 0.0,
+      "candidate": 0.3333333333333333
+    }
+  ],
+  "scope": {
+    "cases": 144,
+    "valid_arm_grades": 288,
+    "cases_per_dataset_per_split": 12,
+    "holdout_previously_exposed": true,
+    "larger_48_case_development_screen_completed": false,
+    "portable_API_benchmark_rerun": false
+  },
+  "mechanism": {
+    "locomo": {
+      "cases": 24,
+      "extra_query_cases": 18,
+      "extra_queries": 23,
+      "changed_inputs": 3,
+      "added_source_cases": 3,
+      "added_session_cases": 0
+    },
+    "longmem": {
+      "cases": 24,
+      "extra_query_cases": 11,
+      "extra_queries": 11,
+      "changed_inputs": 2,
+      "added_source_cases": 2,
+      "added_session_cases": 0
+    },
+    "beam": {
+      "cases": 24,
+      "extra_query_cases": 21,
+      "extra_queries": 31,
+      "changed_inputs": 10,
+      "added_source_cases": 6,
+      "added_session_cases": 0
+    },
+    "clbench": {
+      "cases": 24,
+      "extra_query_cases": 0,
+      "extra_queries": 0,
+      "changed_inputs": 0,
+      "added_source_cases": 0,
+      "added_session_cases": 0
+    },
+    "persona1": {
+      "cases": 24,
+      "extra_query_cases": 18,
+      "extra_queries": 24,
+      "changed_inputs": 9,
+      "added_source_cases": 7,
+      "added_session_cases": 0
+    },
+    "persona2": {
+      "cases": 24,
+      "extra_query_cases": 23,
+      "extra_queries": 30,
+      "changed_inputs": 8,
+      "added_source_cases": 5,
+      "added_session_cases": 0
+    }
+  },
+  "actual_benchmark_costs": {
+    "Planner": {
+      "calls": 238,
+      "prompt_tokens": 392588,
+      "completion_tokens": 32659,
+      "seconds": 484.10500000067987
+    },
+    "Answer": {
+      "calls": 176,
+      "prompt_tokens": 717298,
+      "completion_tokens": 23556,
+      "seconds": 470.7599999997765
+    },
+    "Judge": {
+      "calls": 155,
+      "prompt_tokens": 172653,
+      "completion_tokens": 14139,
+      "seconds": 207.03399999975227
+    }
+  },
+  "latency_seconds": {
+    "exact32_search": {
+      "n": 144,
+      "mean": 0.1786874999961583,
+      "p50": 0.125,
+      "p95": 0.40699999989010394,
+      "max": 0.48400000017136335
+    },
+    "candidate_search": {
+      "n": 144,
+      "mean": 3.677493055558039,
+      "p50": 3.672000000020489,
+      "p95": 7.702999999979511,
+      "max": 9.875
+    },
+    "zero_extra_query_search": {
+      "n": 53,
+      "mean": 1.4194339622550134,
+      "p50": 1.7339999999385327,
+      "p95": 3.406999999890104,
+      "max": 3.672000000020489
+    },
+    "with_extra_query_search": {
+      "n": 91,
+      "mean": 4.992626373635625,
+      "p50": 4.953999999910593,
+      "p95": 8.186999999918044,
+      "max": 9.875
+    }
+  },
+  "failure_categories": {
+    "unchanged_input_baseline_failure": 63,
+    "remaining_incomplete_annotated_coverage": 5,
+    "complete_annotated_coverage_but_answer_wrong": 3,
+    "changed_input_unannotated_native_answer_failure": 10
+  },
+  "runtime_cost_audit": {
+    "successful_runtime_request_receipts": 575,
+    "metered_actual_requests": 575,
+    "local_receipt_cache_reuses": 223,
+    "pending_or_uncertain_requests": 0,
+    "server_prompt_cache_tokens": 0,
+    "receipt_cache_is_distinct_from_disabled_server_prompt_cache": true,
+    "synthetic_calibration_separated_in_analysis": true
+  },
+  "official_submissions": 0,
+  "promotion": false
+}

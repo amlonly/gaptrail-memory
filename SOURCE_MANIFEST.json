@@ -1,0 +1,16 @@
+{
+  "exact32_archive_sha256": "bff4443ee3cbdf4a5e320dfa56fb8e65ca7775d857550c4112de7ddb7a9c74fa",
+  "frozen_v2_protocol_sha256": "96d5582fef1e95329a06417f9bb1b780aa45767821012473527a1b7f2f3ab70f",
+  "byte_identical_files_sha256": {
+    "adaptive_evidence/core.py": "8bf823550c55dbd9c0048f55dc6d43448387450591204d0513e3717a3462579f",
+    "adaptive_evidence/encoder.py": "9d780f9179c00168a68d75b74855ff6b07eb655f2ed106fd2c97b5ab9c3b78ae",
+    "adaptive_evidence/evidence_windows.py": "6995c2b015b75bcb626650e73612ce5e948cc8fdc04e58ca18d534ed0b978166",
+    "adaptive_evidence/focused_packing.py": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+    "adaptive_evidence/passage_packing.py": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+    "adaptive_evidence/retrieval_views.py": "25876968cd5029ac9da816fc459ed5a427f8eed24cc4901540dadef03746bf91",
+    "adaptive_evidence/source_links.py": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+    "adaptive_evidence/source_prior.py": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+    "adaptive_evidence/__init__.py": "bffb96293a3ee82cfe3742c52d9a91e8ff65e60394b09128088d6d25cfb4ebbf",
+    "gaptrail/planner.py": "e932c50acc64cfb08dba3a7b366ede6434397dbc3ffb59616af8af17bd6b27be"
+  }
+}
