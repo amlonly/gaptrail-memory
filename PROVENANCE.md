@@ -1,13 +1,7 @@
-# Source provenance
+# Source attribution and deployment changes
 
-GapTrail Memory 0.1.0 packages direction 05, bounded multi-turn query planning.
+The current graph deployment reuses the direct-original-blocks V4 implementation disclosed by 余付 / DataSpot in AmlSsu/travor-dip-memory, public commit `18bbf3d499d5fd3afd8794f16fd2d3bdbceb42aa`. Its frozen protocol SHA256 is `8b314bc69c6ec48006abd42c0155602c29132b865298272c71ddb43367c33fdd`. SourceTrail / Context Weave supplies the underlying retrieval dependency; the original MIT copyright notice and license are retained. This release claims deployment adaptation, not original authorship of those algorithms.
 
-The `adaptive_evidence/` modules are byte-identical copies of the required retrieval dependency closure from the SourceTrail / Context Weave source archive, SHA256 `bff4443ee3cbdf4a5e320dfa56fb8e65ca7775d857550c4112de7ddb7a9c74fa`. The original MIT license and copyright are retained. The old upstream API and remote embedding adapter are not entry points in this package and were omitted.
+All 40 frozen implementation/dependency files are copied byte-for-byte and listed in `releases/graph-v4-m05/M05_MANIFEST.json`. The added `m05_graph_entry.py` verifies those hashes at startup, selects the graph mode, fixes the evidence budget and separate database path, and replaces only the health metadata endpoint. Add/Search functions, ranking, source slices and response ordering remain the frozen implementation. No Qwen or other generative model is invoked by the memory service. Embeddings use text-embedding-v4; platform Answer/Judge are unchanged.
 
-`gaptrail/planner.py` is byte-identical to the frozen `v2-novel-gaps/planner_v2.py`. Its research protocol SHA256 is `96d5582fef1e95329a06417f9bb1b780aa45767821012473527a1b7f2f3ab70f`. The exact dependency and planner file hashes are in `SOURCE_MANIFEST.json`.
-
-The independent API, local transport, launcher, tests and documentation are publication packaging. They were CPU-tested separately after the research run; no new benchmark accuracy is attributed to the packaging. API result content remains original retrieval evidence. Answer and Judge are external responsibilities.
-
-No graph selection, ColBERT, global-user-facts, state lifecycle or procedure modules from the other research directions are added. Only the source-grounded retrieval incumbent and the bounded query planner are used.
-
-Dataset records, historical conversations, reference answers, model answers, rubric prompts, response caches, databases, model weights, machine logs and authentication material are excluded from publication. Research summaries retain aggregate outcomes and public case identifiers only.
+Earlier v2 packaging remains historical research code. Its separate source manifest, research results, attribution and licenses are retained; its accuracy is not assigned to the graph release. No evaluation records, secrets, database or private user data are published.

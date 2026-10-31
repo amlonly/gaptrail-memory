@@ -1,73 +1,31 @@
-# GapTrail Memory
+# GapTrail Memory v0.35
 
-**沿缺失关系补查，循原文证据返回。** GapTrail Memory 是一个本地运行的记忆检索服务：先检索原文，再由本地规划器判断缺少哪些关系，最多补查两次。笔记保存原文编号，最终返回原始来源片段，供调用平台生成答案。
+当前参赛候选为直接原文块图 V4（`query_document_block_graph`）。它按原文块、标题和列表依赖联合选择证据，保留来源偏移；Add/Search 不调用生成式语言模型，embedding 使用官方 `text-embedding-v4`。Answer 和 Judge 均由评测平台统一执行。
 
-这是研究候选 v2 的独立运行封装，版本 `0.1.0`。本地配对结果尚未通过永久回归门槛，不能据此宣称优于对照或达到官方分数。完整结果见 [研究记录](research/RESULTS.md)，运行步骤见 [中文运行指南](RUN_GUIDE.zh-CN.md)。
+实际部署代码在 [releases/graph-v4-m05](releases/graph-v4-m05)，文件身份见该目录的 `M05_MANIFEST.json`。40 个算法与依赖文件保持冻结版本原样；`m05_graph_entry.py` 只适配 GapTrail 健康信息和独立 m05 数据目录。请以该入口启动当前候选。
 
-## 工作方式
+这是复用已有图 V4 方法的独立部署，不声称新增算法原创性。图 V4 参考发布为 [AmlSsu/travor-dip-memory](https://github.com/AmlSsu/travor-dip-memory/tree/18bbf3d499d5fd3afd8794f16fd2d3bdbceb42aa)，作者披露为余付 / DataSpot；其检索依赖来源为 SourceTrail / Context Weave，原 MIT 许可与版权保留。原文出处和所有改动见 [PROVENANCE.md](PROVENANCE.md)。
 
-1. `/add` 保存用户原始消息及会话、角色和时间，使用 CPU BGE 建立原生索引。
-2. `/search` 执行原版 `query_document_evidence` 检索。
-3. 本地 Qwen 规划器判断缺失关系，执行 `search` 或 `finish`，最多三次规划调用、两次额外查询。查询输入上限 4096 token，输出上限 512 token。
-4. 后续证据可以替换旧笔记。finish 的支持引用必须是原文子串；这一检查保证字面来源，不能保证语义充分。
-5. 保护原版前两条结果，在其后插入最多四条、总计不超过 4000 字符的新原文，最终保持 24000 字符和最多 100 条结果的预算。
+## 运行
 
-单个长文占主要内容或初始结果已覆盖全部来源时直接返回原版结果。规划仅使用查询、原始历史和来源元数据。服务不执行最终 Answer/Judge，不接受标准答案、题型或人工 evidence 字段。
+服务运行于 Python 3.12、Linux。使用独立虚拟环境安装 `releases/graph-v4-m05/requirements.txt`，将该目录放在独立发布目录；创建 `/var/lib/memory-lab/m05/graph-v4-8b314bc69c6e`，将其归属设为运行服务的用户。认证与 embedding 凭据通过私有环境文件注入，不能提交到仓库。
 
-## 快速开始
-
-需要 Python 3.11+、本地 BGE-small-en-v1.5 目录、Qwen3.5-4B tokenizer、Q4_K_M GGUF，以及支持该模型的 llama.cpp。实验使用 llama.cpp `b11146`。模型权重不在仓库内。
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe scripts/run_local.py --llama-server "C:/models/llama-server.exe" --gguf "C:/models/Qwen3.5-4B-Q4_K_M.gguf" --bge "C:/models/bge-small-en-v1.5" --tokenizer "C:/models/qwen-tokenizer" --no-auth
+```sh
+cd releases/graph-v4-m05
+python -m pip install -r requirements.txt
+python -m uvicorn m05_graph_entry:app --host 127.0.0.1 --port 18105 --workers 1
 ```
 
-该命令仅绑定本机：模型端口 18405，记忆 API 端口 8000。`--no-auth` 适用于本地试用；需要服务认证时，在终端设置 `MEMORY_API_KEY` 并去掉该参数。按 Ctrl+C 会停止本次启动的两个进程，并按所有权 nonce 释放 GPU 锁。
+私有环境必须提供 `MEMORY_API_KEY`、`DASHSCOPE_API_KEY` 和经过审核的 HTTPS `AE_EMBEDDING_URL`；其他 embedding 配置按照冻结源码 `env.example` 设置。启动入口固定 `AE_MODE=query_document_block_graph`、24000 字符证据预算和上述独立数据库路径。认证 Add/Search 使用 `X-Api-Key`；health 无需认证。公开反向代理应路由到 18105，不能直接开放数据库或环境文件。
 
-## 接口
+平台输入 `request_id/user_id/session_id/messages` 同步写入；Search 输入 `user_id/query/options/top_k`。Search 返回 `{"data":[...]}`，空结果为 `{"data":[]}`，只包含来源证据；`user_id` 隔离，同用户允许跨会话检索。
 
-```http
-POST /add
-Content-Type: application/json
+## 验证边界
 
-{"request_id":"demo-1","user_id":"demo","session_id":"s1","messages":[{"role":"user","content":"My laboratory sample is teal."}]}
-```
+图 V4 在原账号的两次完整 Smoke 为 65.8854167、59.0798611（均 46/46）；不是本账号分数，也不能证明稳定优于对照。当前方法尚无完整本地最终答案评分，永久性能门槛未通过。本账号的新部署、Smoke 与 Full 状态另行记录，不将旧通过记录冒充当前部署验证。
 
-```http
-POST /search
-Content-Type: application/json
-
-{"user_id":"demo","query":"What color is my laboratory sample?","top_k":5}
-```
-
-Search 返回 `{"data":[...]}`，其中是带原文内容的检索结果。`GET /health` 返回服务信息。认证开启时，Add/Search 携带 `X-API-Key` 或 `Authorization: Bearer ...`。
-
-## 结果与成本
-
-固定公开历史样本：六数据集、每个 split 每数据集 12 题，共 144 题、288 条有效臂评分。development 为 43.06% → 43.06%；holdout 为 43.06% → 44.44%；胜/负/平为 1/0/143。development 没有严格提高，因此永久门槛未通过。holdout 曾在 v1 中暴露，不是新的盲测；更大的 48 题 development 筛选未执行。
-
-共 119 次额外查询、238 次规划调用；32 题实际模型输入变化；1 题标注 packed-input 覆盖提高；无已观察到的逐题答案/覆盖回退。平均 Search 延迟从 0.179 秒升至 3.677 秒。研究全部使用本地模型，付费 API 成本为 0，但消耗本地时间与 token。没有提交 Smoke/Full 或晋升 incumbent。
-
-独立 API 封装通过合成 CPU 测试；上述准确率来自冻结研究管线，不是对新封装再次运行基准后的成绩。
-
-## 仓库内容
-
-- `gaptrail/planner.py`：与冻结 v2 逐字节一致的规划器。
-- `adaptive_evidence/`：逐字节保留的原文检索依赖模块。
-- `gaptrail/api.py`、`runtime.py`：独立 API 和仅允许本机地址的模型调用适配。
-- `scripts/run_local.py`：原子锁、进程所有权和启动清理。
-- `tests/`：合成 CPU 测试，不依赖数据集、GPU 或下载模型。
-- `research/`：聚合结果、成本和复现边界；`SOURCE_MANIFEST.json` 记录来源哈希。
-
-数据集、历史消息、模型答案、评审回执、数据库、模型权重、运行日志和认证文件保留在本地，均不作为发布文件。`data/` 与 `.runtime/` 用于运行时数据，已忽略。
+仓库原有 `gaptrail/`、`scripts/` 与 `research/RESULTS.md` 对应早期 v2 本地研究封装，不是本次图 V4 运行入口，其成绩不能用于本次版本。
 
 ## 许可
 
-MIT，保留依赖源码的版权声明。来源和封装边界见 [PROVENANCE.md](PROVENANCE.md)。
-
-## 发布状态
-
-本仓库对应 v2 研究封装，不等同于线上 v0.35/v7 部署。Full 尚未提交；当前规划候选没有完成有效官方 Smoke。来源披露的补充说明由维护者确认后添加，已有依赖归属和许可仍保留。
+MIT。保留所有原有版权和依赖归属，不分发数据集、评测题目、模型权重、运行数据库或认证材料。
