@@ -2,7 +2,7 @@
 
 当前参赛候选为直接原文块图 V4（`query_document_block_graph`）。它按原文块、标题和列表依赖联合选择证据，保留来源偏移；Add/Search 不调用生成式语言模型，embedding 使用官方 `text-embedding-v4`。Answer 和 Judge 均由评测平台统一执行。
 
-实际部署代码在 [releases/graph-v4-m05](releases/graph-v4-m05)，文件身份见该目录的 `M05_MANIFEST.json`。40 个算法与依赖文件保持冻结版本原样；`m05_graph_entry.py` 只适配 GapTrail 健康信息和独立 m05 数据目录。请以该入口启动当前候选。
+实际部署代码在 [releases/graph-v4-m05](releases/graph-v4-m05)，文件身份见该目录的 `M05_MANIFEST.json`。40 个算法与依赖文件保持冻结版本原样；`m05_graph_entry.py` 只适配 GapTrail 健康信息和独立 m05 数据目录。以 `frozen-runtime.tar.gz` 为逐字节运行归档；Git 文本展示可能规范化换行，启动前须先解压该归档覆盖当前目录，再由该入口启动。
 
 这是复用已有图 V4 方法的独立部署，不声称新增算法原创性。图 V4 参考发布为 [AmlSsu/travor-dip-memory](https://github.com/AmlSsu/travor-dip-memory/tree/18bbf3d499d5fd3afd8794f16fd2d3bdbceb42aa)，作者披露为余付 / DataSpot；其检索依赖来源为 SourceTrail / Context Weave，原 MIT 许可与版权保留。原文出处和所有改动见 [PROVENANCE.md](PROVENANCE.md)。
 
@@ -12,6 +12,8 @@
 
 ```sh
 cd releases/graph-v4-m05
+sha256sum -c frozen-runtime.sha256
+tar -xzf frozen-runtime.tar.gz
 python -m pip install -r requirements.txt
 python -m uvicorn m05_graph_entry:app --host 127.0.0.1 --port 18105 --workers 1
 ```
