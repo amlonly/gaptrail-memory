@@ -1,6 +1,6 @@
 feat: publish GapTrail Memory bounded source-grounded query planner
 
-Package the exact32 retrieval dependency closure and frozen v2 planner with
+Package the retrieval dependency closure and frozen v2 planner with
 a loopback-only local model adapter, Add/Search API, owner-checked GPU lock
 launcher, CPU contract/provenance tests, and Chinese operating guide.
 

@@ -1,8 +1,8 @@
 # GapTrail Memory
 
-**沿缺失关系补查，循原文证据返回。** GapTrail Memory 是一个本地运行的记忆检索服务：先用 exact SourceTrail / Context Weave 0.32 检索原文，再由本地规划器判断缺少哪些关系，最多补查两次。笔记保存原文编号，最终返回原始来源片段，供调用平台生成答案。
+**沿缺失关系补查，循原文证据返回。** GapTrail Memory 是一个本地运行的记忆检索服务：先检索原文，再由本地规划器判断缺少哪些关系，最多补查两次。笔记保存原文编号，最终返回原始来源片段，供调用平台生成答案。
 
-这是研究候选 v2 的独立运行封装，版本 `0.1.0`。本地配对结果尚未通过永久回归门槛，不能据此宣称优于 exact 0.32 或达到官方分数。完整结果见 [研究记录](research/RESULTS.md)，运行步骤见 [中文运行指南](RUN_GUIDE.zh-CN.md)。
+这是研究候选 v2 的独立运行封装，版本 `0.1.0`。本地配对结果尚未通过永久回归门槛，不能据此宣称优于对照或达到官方分数。完整结果见 [研究记录](research/RESULTS.md)，运行步骤见 [中文运行指南](RUN_GUIDE.zh-CN.md)。
 
 ## 工作方式
 
@@ -56,7 +56,7 @@ Search 返回 `{"data":[...]}`，其中是带原文内容的检索结果。`GET 
 ## 仓库内容
 
 - `gaptrail/planner.py`：与冻结 v2 逐字节一致的规划器。
-- `adaptive_evidence/`：逐字节保留的 exact32 检索依赖模块。
+- `adaptive_evidence/`：逐字节保留的原文检索依赖模块。
 - `gaptrail/api.py`、`runtime.py`：独立 API 和仅允许本机地址的模型调用适配。
 - `scripts/run_local.py`：原子锁、进程所有权和启动清理。
 - `tests/`：合成 CPU 测试，不依赖数据集、GPU 或下载模型。
@@ -66,4 +66,8 @@ Search 返回 `{"data":[...]}`，其中是带原文内容的检索结果。`GET 
 
 ## 许可
 
-MIT，保留原 exact32 的版权声明。来源和封装边界见 [PROVENANCE.md](PROVENANCE.md)。
+MIT，保留依赖源码的版权声明。来源和封装边界见 [PROVENANCE.md](PROVENANCE.md)。
+
+## 发布状态
+
+本仓库对应 v2 研究封装，不等同于线上 v0.35/v7 部署。Full 尚未提交；当前规划候选没有完成有效官方 Smoke。来源披露的补充说明由维护者确认后添加，已有依赖归属和许可仍保留。

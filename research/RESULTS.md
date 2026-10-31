@@ -1,18 +1,18 @@
 # v2 有界多轮查询规划：结果与诊断
 
-这是从 exact 官方 0.32 建立的独立查询规划修订。旧 v1 的源码、结果及协议保持原样。
+这是方向05的独立查询规划修订。旧 v1 的源码、结果及协议保持原样。
 候选冻结后完成全部 144 题、288 份有效评分，没有按 development/holdout 的本轮结果改参数。
 **样本限制：每家族每 split 12 题；两个 split 都已被 v1 评估，因此 holdout 已曝光，不是新的盲测。48 题 development 筛选未执行。**
 
 ## 修订机制
 
-修复 v1 先到先留笔记被首轮占满的问题；允许新证据替换旧笔记。补查使用原生 exact32 的完整 raw 索引和 query_document_evidence 排名，观察前 80 名中至多 6 个尚未覆盖的原文来源片段。
+修复 v1 先到先留笔记被首轮占满的问题；允许新证据替换旧笔记。补查使用原生 检索对照 的完整 raw 索引和 query_document_evidence 排名，观察前 80 名中至多 6 个尚未覆盖的原文来源片段。
 规划器将所需关系与字面原文引用对应；支持引用需通过子串核验。生成的缺口文本仅用于内部查询，不作为记忆返回。最多两次补查、三次规划调用；最多四条新增原文、4,000 字符插入受保护的前两条之后。
 对单个原文占总长度至少 50%、长度至少 2,000 字符的文档直接返回原版结果，避免此类情况消耗规划调用。所有路由基于来源结构，不看数据集/题型/标准答案/人工 evidence。没有叠加其他六个方向。
 
 ## 最终答案配对
 
-| 数据集 | development exact32 / v2 | holdout exact32 / v2 | 合计 exact32 / v2 | 总胜/负/平 |
+| 数据集 | development 检索对照 / v2 | holdout 检索对照 / v2 | 合计 检索对照 / v2 | 总胜/负/平 |
 |---|---:|---:|---:|---:|
 | locomo | 58.33% / 58.33% | 33.33% / 33.33% | 45.83% / 45.83% | 0/0/24 |
 | longmem | 41.67% / 41.67% | 75.00% / 75.00% | 58.33% / 58.33% | 0/0/24 |
@@ -56,14 +56,14 @@ holdout 六家族宏平均：**43.06% → 44.44%**；胜/负/平 **1/0/71**。
 | Answer | 176 | 717298 | 23556 | 470.760 |
 | Judge | 155 | 172653 | 14139 | 207.034 |
 
-平均 Search 延迟 exact32 0.179s → v2 3.677s，v2 P95 7.703s。包含初始检索、规划、补查，排除锁等待、加载与 Answer/Judge。
+平均 Search 延迟 检索对照 0.179s → v2 3.677s，v2 P95 7.703s。包含初始检索、规划、补查，排除锁等待、加载与 Answer/Judge。
 所有研究模型调用均为本地，付费 API 成本 $0；本地运行时间和 token 不为零。六次合成 Judge 校准成本另列在 analysis.json。相同请求仅在 v2 内复用；逐题逻辑 Answer/Judge 成本和实际调用分别统计。
 
 ## 实际失败与回退
 
 失败类别：{"unchanged_input_baseline_failure": 63, "remaining_incomplete_annotated_coverage": 5, "complete_annotated_coverage_but_answer_wrong": 3, "changed_input_unannotated_native_answer_failure": 10}
 
-| 数据集 | Case ID | Split | 查询 | 回退/错误 | packed recall exact32 → v2 |
+| 数据集 | Case ID | Split | 查询 | 回退/错误 | packed recall 检索对照 → v2 |
 |---|---|---|---:|---|---|
 | locomo | conv-30#q0017 | development | 2 | tie: unchanged_input_baseline_failure | 1.0 → 1.0 |
 | locomo | conv-44#q0018 | development | 2 | tie: remaining_incomplete_annotated_coverage | 0.0 → 0.0 |
@@ -75,10 +75,10 @@ holdout 六家族宏平均：**43.06% → 44.44%**；胜/负/平 **1/0/71**。
 ## 复现与完整性
 
 从项目根目录用 models/.venv/Scripts/python.exe 执行本报告上级目录的 `recover_wait_fast.py`；完成后 `finalize_recovery.py` 只做 CPU 汇总。协议、所有模型/数据/源码哈希在 protocol.json。
-核验 exact32 的完整 Search 与 packed 输入对 v1 全部一致；原文偏移、元数据和前两条保护通过；最终审计在 final-audit.json。
+核验 检索对照 的完整 Search 与 packed 输入对 v1 全部一致；原文偏移、元数据和前两条保护通过；最终审计在 final-audit.json。
 逐题查询次数、停止原因、延迟、token 与成本在 per-case-costs.json；所有回退和门槛输入在 comparison.json、gate-input.json。
 自己的 18405 本地模型已停止，匹配所有权的公共锁已释放，没有停止别人的服务。未提交 Smoke/Full、未修改 incumbent、官方提示/评分、数据、账号、路由、队列或自动化。
-faithful-v2 的 76% 和旧 82% 均不参与本次与 exact32 的成绩比较。
+faithful-v2 的 76% 和旧 82% 均不参与本次与 检索对照 的成绩比较。
 
 ## 运行时恢复及总消耗
 
@@ -98,7 +98,7 @@ faithful-v2 的 76% 和旧 82% 均不参与本次与 exact32 的成绩比较。
 
 ## 发布封装与下一步研究边界
 
-发布版沿用逐字节一致的规划器和 exact32 检索依赖，另加独立本地 API；API 封装只通过合成 CPU 测试，上述准确率来自冻结研究管线。
+发布版沿用逐字节一致的规划器和 检索对照 检索依赖，另加独立本地 API；API 封装只通过合成 CPU 测试，上述准确率来自冻结研究管线。
 
 91 题进行了补查，32 题实际输入变化，其中只有 1 题最终答案得分提高；其余 59 个补查题没有改变实际输入。23 题加入新原文 source，但没有题目新增 session，尚未显示扩大跨会话覆盖的作用。53 次以空或重复查询停止，说明额外调用仍有明显浪费。
 
