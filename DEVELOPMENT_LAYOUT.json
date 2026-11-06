@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "system": "GapTrail: graph release and legacy planner",
+  "before_commit": "8b39b233b7d0d6046ba7aab58abc009c25347ab0",
+  "release_paths_preserved": true,
+  "original_files": {
+    ".env.example": {
+      "path": "legacy/query_planner_v2/.env.example",
+      "before_sha256": "89bed8c2147f2fcabcf764054d31aac4e6fb5b56e4368841bbb74d46660750fd",
+      "adapted": false
+    },
+    ".gitattributes": {
+      "path": ".gitattributes",
+      "before_sha256": "41a5c824f74d199ef126db8918c0dc97e4f1fd56f350bf8e6385ebb8ab839ee6",
+      "adapted": true
+    },
+    ".gitignore": {
+      "path": ".gitignore",
+      "before_sha256": "af533aeee97ad2400d6af99d5f36c3cc5cadc101e1d3039910c22c82a74dd803",
+      "adapted": true
+    },
+    "COMMIT_MESSAGE.txt": {
+      "path": "COMMIT_MESSAGE.txt",
+      "before_sha256": "8ac1081e3d9cb960094455268a43089bf2f788f4680a981805d260988f541811",
+      "adapted": false
+    },
+    "LICENSE": {
+      "path": "LICENSE",
+      "before_sha256": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+      "adapted": false
+    },
+    "PROVENANCE.md": {
+      "path": "PROVENANCE.md",
+      "before_sha256": "8e355c238c3ec8c18019e3fc2f5fd770d18711eab10343dcd60d0a120736d318",
+      "adapted": true
+    },
+    "README.md": {
+      "path": "README.md",
+      "before_sha256": "cfe67de63c2ab71d32a5b35bbbd398e9bb5143698b8ec58739cb748c3d1e6183",
+      "adapted": true
+    },
+    "RUN_GUIDE.zh-CN.md": {
+      "path": "operator_guide/RUN_GUIDE.zh-CN.md",
+      "before_sha256": "1026a8174af550e289cadb98a5ba49d93e7339c324560b0e1630896883ca0eeb",
+      "adapted": true
+    },
+    "SOURCE_MANIFEST.json": {
+      "path": "SOURCE_MANIFEST.json",
+      "before_sha256": "20e8bba6ad062c0af277cf7c21d5c471fe76db83ae21a89d4e4e39ae23a5dce2",
+      "adapted": false
+    },
+    "adaptive_evidence/__init__.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/__init__.py",
+      "before_sha256": "bffb96293a3ee82cfe3742c52d9a91e8ff65e60394b09128088d6d25cfb4ebbf",
+      "adapted": false
+    },
+    "adaptive_evidence/core.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/core.py",
+      "before_sha256": "8bf823550c55dbd9c0048f55dc6d43448387450591204d0513e3717a3462579f",
+      "adapted": false
+    },
+    "adaptive_evidence/encoder.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/encoder.py",
+      "before_sha256": "9d780f9179c00168a68d75b74855ff6b07eb655f2ed106fd2c97b5ab9c3b78ae",
+      "adapted": false
+    },
+    "adaptive_evidence/evidence_windows.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/evidence_windows.py",
+      "before_sha256": "6995c2b015b75bcb626650e73612ce5e948cc8fdc04e58ca18d534ed0b978166",
+      "adapted": false
+    },
+    "adaptive_evidence/focused_packing.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/focused_packing.py",
+      "before_sha256": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+      "adapted": false
+    },
+    "adaptive_evidence/passage_packing.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/passage_packing.py",
+      "before_sha256": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+      "adapted": false
+    },
+    "adaptive_evidence/retrieval_views.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/retrieval_views.py",
+      "before_sha256": "25876968cd5029ac9da816fc459ed5a427f8eed24cc4901540dadef03746bf91",
+      "adapted": false
+    },
+    "adaptive_evidence/source_links.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/source_links.py",
+      "before_sha256": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+      "adapted": false
+    },
+    "adaptive_evidence/source_prior.py": {
+      "path": "legacy/query_planner_v2/adaptive_evidence/source_prior.py",
+      "before_sha256": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+      "adapted": false
+    },
+    "gaptrail/__init__.py": {
+      "path": "legacy/query_planner_v2/gaptrail/__init__.py",
+      "before_sha256": "62844100b9b37f5df9a33cbc54264f1098b3b6400aae3f9635d611f54be308f4",
+      "adapted": false
+    },
+    "gaptrail/api.py": {
+      "path": "legacy/query_planner_v2/gaptrail/api.py",
+      "before_sha256": "17e9cfd0b99cb573d2ab6f1746b9132f1f17afcfe96ee809f7241e06209dfaf9",
+      "adapted": false
+    },
+    "gaptrail/planner.py": {
+      "path": "legacy/query_planner_v2/gaptrail/planner.py",
+      "before_sha256": "e932c50acc64cfb08dba3a7b366ede6434397dbc3ffb59616af8af17bd6b27be",
+      "adapted": false
+    },
+    "gaptrail/runtime.py": {
+      "path": "legacy/query_planner_v2/gaptrail/runtime.py",
+      "before_sha256": "a63650d6376bbb7ba7d1b1b9c78418bf9ee5d1e41d6252bd56e6a05b2fb35721",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/.dockerignore": {
+      "path": "releases/graph-v4-m05/.dockerignore",
+      "before_sha256": "5883da00290e2c59528b87aca2de6dc9451846da45d1ba9b26e88918a0ec5425",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/.gitattributes": {
+      "path": "releases/graph-v4-m05/.gitattributes",
+      "before_sha256": "9a5b3e8c93ebcd35a580f2c2cf3b51cad2f4e5c1514a6984f454f36b355dacd8",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/.gitignore": {
+      "path": "releases/graph-v4-m05/.gitignore",
+      "before_sha256": "32a83f758f5e34a3b4dcff75f738b9b03d0b4bb399bfd756bcaa6e9d2345b347",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/Caddyfile": {
+      "path": "releases/graph-v4-m05/Caddyfile",
+      "before_sha256": "dd935aa3add2add6878a2a559feacbfd2c653016d7332bb59558f6d5ed3187b2",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/Dockerfile": {
+      "path": "releases/graph-v4-m05/Dockerfile",
+      "before_sha256": "5900989ff735dd51efe33c11e3254ec08200fd3fc8b0dfb9c2c9b04ec4a6cfde",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/LICENSE": {
+      "path": "releases/graph-v4-m05/LICENSE",
+      "before_sha256": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/M05_MANIFEST.json": {
+      "path": "releases/graph-v4-m05/M05_MANIFEST.json",
+      "before_sha256": "9562860fe731d527fb3935ca9462872a25e174e511ce81854b3130976e04d2bd",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/OPERATIONS.md": {
+      "path": "releases/graph-v4-m05/OPERATIONS.md",
+      "before_sha256": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/PROVENANCE.md": {
+      "path": "releases/graph-v4-m05/PROVENANCE.md",
+      "before_sha256": "59d662921570685fd5c0dc1fc2f884f11240de2394e3c62c0695b9020c1c2bed",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/README.md": {
+      "path": "releases/graph-v4-m05/README.md",
+      "before_sha256": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/SHA256SUMS.json": {
+      "path": "releases/graph-v4-m05/SHA256SUMS.json",
+      "before_sha256": "1164ff02d15fc48c9cf8af389e731d03cb304ef688d7372da9a5329ab10c0cd0",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/SUBMISSION.md": {
+      "path": "releases/graph-v4-m05/SUBMISSION.md",
+      "before_sha256": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/__init__.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/__init__.py",
+      "before_sha256": "3c5a56bb0c56bd81c4da918104a8fdbc5c155b828c5176331dcdc677052af94c",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/api.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/api.py",
+      "before_sha256": "4f4a2e4d2c6ef61ffe3fe20133c766922d76d8ef4c7f200b6075bb0abab0cb72",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/block_graph.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/block_graph.py",
+      "before_sha256": "ccdf76afcdbb259019feced3dbd3c6fdb7ffc9aa43b88ef08946e708cdecc3fd",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/block_selection.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/block_selection.py",
+      "before_sha256": "954f7ca2ecb9e6d67a08c846d598465e4707929d1b0e01f35c9ea92938ebaeca",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/core.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/core.py",
+      "before_sha256": "54bab2b16c48ea24db38eb663094eefc7d04b3053c94ca4099a03bf26105e4c0",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/encoder.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/encoder.py",
+      "before_sha256": "775a9d45ba261d666ab3d5ea026ba9ab0c6c69107cd289b481277fe04f5c1b13",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/evidence_windows.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/evidence_windows.py",
+      "before_sha256": "583894c955b56f389cf9af4c71a9d5379ec663743ecd0b4bc2d05ac6b6148796",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/focused_packing.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/focused_packing.py",
+      "before_sha256": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/passage_packing.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/passage_packing.py",
+      "before_sha256": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/remote_encoder.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/remote_encoder.py",
+      "before_sha256": "daf3482fd9232598138a5ce24b2998d706f97a7de53329cb02a191495a0c1b5c",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/retrieval_views.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/retrieval_views.py",
+      "before_sha256": "21b13f6f545df7ed819b2362dbc38cd78dfd945e0f6ddfd694a16182fac6896d",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/source_links.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/source_links.py",
+      "before_sha256": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/adaptive_evidence/source_prior.py": {
+      "path": "releases/graph-v4-m05/adaptive_evidence/source_prior.py",
+      "before_sha256": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/compose.yaml": {
+      "path": "releases/graph-v4-m05/compose.yaml",
+      "before_sha256": "bddb187f11c7bffa82b64b08efbe9767adf0e995b17bab5757904394e62cc857",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/env.example": {
+      "path": "releases/graph-v4-m05/env.example",
+      "before_sha256": "19796ba5855531864c0919fef3186124f3169f24165bc3bcae59ae12200dd8db",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/frozen-runtime.sha256": {
+      "path": "releases/graph-v4-m05/frozen-runtime.sha256",
+      "before_sha256": "8d99b79265e91e67fefab9b9126200070410c85bcd35d9c9428f3334ef3df0b8",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/frozen-runtime.tar.gz": {
+      "path": "releases/graph-v4-m05/frozen-runtime.tar.gz",
+      "before_sha256": "fe62b9e5203c3556fc46de6b3034dc7e6d75fe797c4fa83369b77821aec3a619",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/m05_graph_entry.py": {
+      "path": "releases/graph-v4-m05/m05_graph_entry.py",
+      "before_sha256": "3516dd5c3f40b6bcd3caca09ec5edee64ef99b976af117a091089a007e8d4b2c",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/package_source.py": {
+      "path": "releases/graph-v4-m05/package_source.py",
+      "before_sha256": "3b35a2562c5eba9160f12928ab147643eb2981b707450347a159a2e10e2cc734",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/preflight.py": {
+      "path": "releases/graph-v4-m05/preflight.py",
+      "before_sha256": "e011e272ae35d5532ab24bb5fda5b89f7c5f730f57c51bd4d16e94edf27d79c2",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/requirements.txt": {
+      "path": "releases/graph-v4-m05/requirements.txt",
+      "before_sha256": "8c62249b9350751d779a1218cfb783f69bf4557d70d4820f874fb11004658628",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/start_local.ps1": {
+      "path": "releases/graph-v4-m05/start_local.ps1",
+      "before_sha256": "43ed7f012793b1f2fb3624954cbcbf92f1f16cd0c8072b26576f782d3b95d41d",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_adaptive.py": {
+      "path": "releases/graph-v4-m05/tests/test_adaptive.py",
+      "before_sha256": "a3b8148a37a663d616245385cf21896bb8e8ef3b5d75d78ff1c63ee5ee90e6a6",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_answer_only.py": {
+      "path": "releases/graph-v4-m05/tests/test_answer_only.py",
+      "before_sha256": "cb31d1ccd8dbc68966231e78073db2bd0572d43b46da2c884451e94c889c9780",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_coherent_sources.py": {
+      "path": "releases/graph-v4-m05/tests/test_coherent_sources.py",
+      "before_sha256": "92d715071082ca16e6340b2911666a008b9d4f44675a1370f8dee469157c1049",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_contract.py": {
+      "path": "releases/graph-v4-m05/tests/test_contract.py",
+      "before_sha256": "62ac861c4e372598b1b9c51697d538f0b946edfc6f4b660f4d12edf8ab99f63e",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_evidence_budget.py": {
+      "path": "releases/graph-v4-m05/tests/test_evidence_budget.py",
+      "before_sha256": "c41047949df0e9b65d38056de3607786ba7660a103c2b0ac3db5779645d6cd7d",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_evidence_windows.py": {
+      "path": "releases/graph-v4-m05/tests/test_evidence_windows.py",
+      "before_sha256": "86607b26a64d1f401dd301038937b11399b238efc14f93c2c51a0ef6e5a5d81e",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_focused_packing.py": {
+      "path": "releases/graph-v4-m05/tests/test_focused_packing.py",
+      "before_sha256": "1c68b0a961201c5cd7125b7914afa5dcdc2d498dc501741f18fb532f128b5c72",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_query_documents.py": {
+      "path": "releases/graph-v4-m05/tests/test_query_documents.py",
+      "before_sha256": "e0e0d1218cf7fc99c30ae682c08ce0794e945174e46e523478c2e52a6e2d3c28",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_remote_encoder.py": {
+      "path": "releases/graph-v4-m05/tests/test_remote_encoder.py",
+      "before_sha256": "cec5a61eac457dd3942e0c28085cf292cf60f352d9b9945643a3b1e09301db9b",
+      "adapted": false
+    },
+    "releases/graph-v4-m05/tests/test_retrieval_views.py": {
+      "path": "releases/graph-v4-m05/tests/test_retrieval_views.py",
+      "before_sha256": "ab77e7a6454546ba5124e418f804983e00df59b68b894a33f0d0a22b9647b4d0",
+      "adapted": false
+    },
+    "requirements.txt": {
+      "path": "legacy/query_planner_v2/requirements.txt",
+      "before_sha256": "3c7a8ccc2006afe22a494bdbba85d1f0b65e60371d67eca7d35a37d01f3790ab",
+      "adapted": false
+    },
+    "research/RESULTS.md": {
+      "path": "experiments/RESULTS.md",
+      "before_sha256": "019c3b45f0f7c0f1ff0cad1784ab1f3ab58b65d7c0d3483be7c3cff4cd3fdc7f",
+      "adapted": false
+    },
+    "research/RESULT_SOURCE.json": {
+      "path": "experiments/RESULT_SOURCE.json",
+      "before_sha256": "00442af868e02059b4abd5815f355ea0b27892d85e2fb06b1d2da65799bb28b2",
+      "adapted": false
+    },
+    "research/embedding-costs.json": {
+      "path": "experiments/embedding-costs.json",
+      "before_sha256": "b2e42894a4651971bbd2d7c21a01215616e216c4e6c3a02c24aa31253eabed5b",
+      "adapted": false
+    },
+    "research/per-case-costs.json": {
+      "path": "experiments/per-case-costs.json",
+      "before_sha256": "26af3999e1b051531c4b3b4f29c540be204988a1e65515569356e79b6967af9b",
+      "adapted": false
+    },
+    "research/results.json": {
+      "path": "experiments/results.json",
+      "before_sha256": "d792c54f92c980f8428a39c5173247c8ad9849e06894afb7e4a13c44e2d1ce32",
+      "adapted": false
+    },
+    "research/runtime-cost-audit.json": {
+      "path": "experiments/runtime-cost-audit.json",
+      "before_sha256": "0dccdf6ac8fd321f527c76f64e1950c0646a52c22fc4aa7fb31498df4d4f4c55",
+      "adapted": false
+    },
+    "research/screening-assessment.json": {
+      "path": "experiments/screening-assessment.json",
+      "before_sha256": "bee901b8199d585a5100f0a0b32c4562c49556c6d4fc4550b9286252c6cc270c",
+      "adapted": false
+    },
+    "research/total-attempt-costs.json": {
+      "path": "experiments/total-attempt-costs.json",
+      "before_sha256": "210b44d73f07dcd82f6d3d62d9d53efe43c81811ed614c7dd6dfd78e08e4f922",
+      "adapted": false
+    },
+    "scripts/run_local.py": {
+      "path": "legacy/query_planner_v2/scripts/run_local.py",
+      "before_sha256": "000ee200008b3815c50ec4d50738cb07525a66ea513cb95245d9219b25f5813d",
+      "adapted": false
+    },
+    "tests/test_service.py": {
+      "path": "legacy/query_planner_v2/tests/test_service.py",
+      "before_sha256": "e7952c6e05135c656a32bc16737dcec836d28c96cc81bf4b822b459b04c98233",
+      "adapted": false
+    }
+  },
+  "protected_files": {
+    "SOURCE_MANIFEST.json": "20e8bba6ad062c0af277cf7c21d5c471fe76db83ae21a89d4e4e39ae23a5dce2",
+    "releases/graph-v4-m05/.dockerignore": "5883da00290e2c59528b87aca2de6dc9451846da45d1ba9b26e88918a0ec5425",
+    "releases/graph-v4-m05/.gitattributes": "9a5b3e8c93ebcd35a580f2c2cf3b51cad2f4e5c1514a6984f454f36b355dacd8",
+    "releases/graph-v4-m05/.gitignore": "32a83f758f5e34a3b4dcff75f738b9b03d0b4bb399bfd756bcaa6e9d2345b347",
+    "releases/graph-v4-m05/Caddyfile": "dd935aa3add2add6878a2a559feacbfd2c653016d7332bb59558f6d5ed3187b2",
+    "releases/graph-v4-m05/Dockerfile": "5900989ff735dd51efe33c11e3254ec08200fd3fc8b0dfb9c2c9b04ec4a6cfde",
+    "releases/graph-v4-m05/LICENSE": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+    "releases/graph-v4-m05/M05_MANIFEST.json": "9562860fe731d527fb3935ca9462872a25e174e511ce81854b3130976e04d2bd",
+    "releases/graph-v4-m05/OPERATIONS.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/PROVENANCE.md": "59d662921570685fd5c0dc1fc2f884f11240de2394e3c62c0695b9020c1c2bed",
+    "releases/graph-v4-m05/README.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/SHA256SUMS.json": "1164ff02d15fc48c9cf8af389e731d03cb304ef688d7372da9a5329ab10c0cd0",
+    "releases/graph-v4-m05/SUBMISSION.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/adaptive_evidence/__init__.py": "3c5a56bb0c56bd81c4da918104a8fdbc5c155b828c5176331dcdc677052af94c",
+    "releases/graph-v4-m05/adaptive_evidence/api.py": "4f4a2e4d2c6ef61ffe3fe20133c766922d76d8ef4c7f200b6075bb0abab0cb72",
+    "releases/graph-v4-m05/adaptive_evidence/block_graph.py": "ccdf76afcdbb259019feced3dbd3c6fdb7ffc9aa43b88ef08946e708cdecc3fd",
+    "releases/graph-v4-m05/adaptive_evidence/block_selection.py": "954f7ca2ecb9e6d67a08c846d598465e4707929d1b0e01f35c9ea92938ebaeca",
+    "releases/graph-v4-m05/adaptive_evidence/core.py": "54bab2b16c48ea24db38eb663094eefc7d04b3053c94ca4099a03bf26105e4c0",
+    "releases/graph-v4-m05/adaptive_evidence/encoder.py": "775a9d45ba261d666ab3d5ea026ba9ab0c6c69107cd289b481277fe04f5c1b13",
+    "releases/graph-v4-m05/adaptive_evidence/evidence_windows.py": "583894c955b56f389cf9af4c71a9d5379ec663743ecd0b4bc2d05ac6b6148796",
+    "releases/graph-v4-m05/adaptive_evidence/focused_packing.py": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+    "releases/graph-v4-m05/adaptive_evidence/passage_packing.py": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+    "releases/graph-v4-m05/adaptive_evidence/remote_encoder.py": "daf3482fd9232598138a5ce24b2998d706f97a7de53329cb02a191495a0c1b5c",
+    "releases/graph-v4-m05/adaptive_evidence/retrieval_views.py": "21b13f6f545df7ed819b2362dbc38cd78dfd945e0f6ddfd694a16182fac6896d",
+    "releases/graph-v4-m05/adaptive_evidence/source_links.py": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+    "releases/graph-v4-m05/adaptive_evidence/source_prior.py": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+    "releases/graph-v4-m05/compose.yaml": "bddb187f11c7bffa82b64b08efbe9767adf0e995b17bab5757904394e62cc857",
+    "releases/graph-v4-m05/env.example": "19796ba5855531864c0919fef3186124f3169f24165bc3bcae59ae12200dd8db",
+    "releases/graph-v4-m05/frozen-runtime.sha256": "8d99b79265e91e67fefab9b9126200070410c85bcd35d9c9428f3334ef3df0b8",
+    "releases/graph-v4-m05/frozen-runtime.tar.gz": "fe62b9e5203c3556fc46de6b3034dc7e6d75fe797c4fa83369b77821aec3a619",
+    "releases/graph-v4-m05/m05_graph_entry.py": "3516dd5c3f40b6bcd3caca09ec5edee64ef99b976af117a091089a007e8d4b2c",
+    "releases/graph-v4-m05/package_source.py": "3b35a2562c5eba9160f12928ab147643eb2981b707450347a159a2e10e2cc734",
+    "releases/graph-v4-m05/preflight.py": "e011e272ae35d5532ab24bb5fda5b89f7c5f730f57c51bd4d16e94edf27d79c2",
+    "releases/graph-v4-m05/requirements.txt": "8c62249b9350751d779a1218cfb783f69bf4557d70d4820f874fb11004658628",
+    "releases/graph-v4-m05/start_local.ps1": "43ed7f012793b1f2fb3624954cbcbf92f1f16cd0c8072b26576f782d3b95d41d",
+    "releases/graph-v4-m05/tests/test_adaptive.py": "a3b8148a37a663d616245385cf21896bb8e8ef3b5d75d78ff1c63ee5ee90e6a6",
+    "releases/graph-v4-m05/tests/test_answer_only.py": "cb31d1ccd8dbc68966231e78073db2bd0572d43b46da2c884451e94c889c9780",
+    "releases/graph-v4-m05/tests/test_coherent_sources.py": "92d715071082ca16e6340b2911666a008b9d4f44675a1370f8dee469157c1049",
+    "releases/graph-v4-m05/tests/test_contract.py": "62ac861c4e372598b1b9c51697d538f0b946edfc6f4b660f4d12edf8ab99f63e",
+    "releases/graph-v4-m05/tests/test_evidence_budget.py": "c41047949df0e9b65d38056de3607786ba7660a103c2b0ac3db5779645d6cd7d",
+    "releases/graph-v4-m05/tests/test_evidence_windows.py": "86607b26a64d1f401dd301038937b11399b238efc14f93c2c51a0ef6e5a5d81e",
+    "releases/graph-v4-m05/tests/test_focused_packing.py": "1c68b0a961201c5cd7125b7914afa5dcdc2d498dc501741f18fb532f128b5c72",
+    "releases/graph-v4-m05/tests/test_query_documents.py": "e0e0d1218cf7fc99c30ae682c08ce0794e945174e46e523478c2e52a6e2d3c28",
+    "releases/graph-v4-m05/tests/test_remote_encoder.py": "cec5a61eac457dd3942e0c28085cf292cf60f352d9b9945643a3b1e09301db9b",
+    "releases/graph-v4-m05/tests/test_retrieval_views.py": "ab77e7a6454546ba5124e418f804983e00df59b68b894a33f0d0a22b9647b4d0"
+  },
+  "files_sha256": {
+    ".gitattributes": "4fff487146e2916ba9f79fc9a4be4b6cafae2a93735bb0787f49cffefd83b487",
+    ".gitignore": "4f7c9fd381c22790c6b7b69419fdc32dcf62475cd9d52a8dcc337174ed37b938",
+    "COMMIT_MESSAGE.txt": "8ac1081e3d9cb960094455268a43089bf2f788f4680a981805d260988f541811",
+    "LICENSE": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+    "PROVENANCE.md": "285b9e676d3986dd6d02e3956ca1e4b00eb9a2f3232e3613864fbebbf272dbd9",
+    "README.md": "949340222c07b48bb7c66fbd12447910a2f5126e7f32dee865ddca87a83b4c60",
+    "SOURCE_MANIFEST.json": "20e8bba6ad062c0af277cf7c21d5c471fe76db83ae21a89d4e4e39ae23a5dce2",
+    "experiments/RESULTS.md": "019c3b45f0f7c0f1ff0cad1784ab1f3ab58b65d7c0d3483be7c3cff4cd3fdc7f",
+    "experiments/RESULT_SOURCE.json": "00442af868e02059b4abd5815f355ea0b27892d85e2fb06b1d2da65799bb28b2",
+    "experiments/V2_RUN_GUIDE.zh-CN.md": "6a782afbeb535b5e63c7fce559a8cb73887d48e6857378a2439ee3229a478d90",
+    "experiments/embedding-costs.json": "b2e42894a4651971bbd2d7c21a01215616e216c4e6c3a02c24aa31253eabed5b",
+    "experiments/per-case-costs.json": "26af3999e1b051531c4b3b4f29c540be204988a1e65515569356e79b6967af9b",
+    "experiments/results.json": "d792c54f92c980f8428a39c5173247c8ad9849e06894afb7e4a13c44e2d1ce32",
+    "experiments/runtime-cost-audit.json": "0dccdf6ac8fd321f527c76f64e1950c0646a52c22fc4aa7fb31498df4d4f4c55",
+    "experiments/screening-assessment.json": "bee901b8199d585a5100f0a0b32c4562c49556c6d4fc4550b9286252c6cc270c",
+    "experiments/total-attempt-costs.json": "210b44d73f07dcd82f6d3d62d9d53efe43c81811ed614c7dd6dfd78e08e4f922",
+    "graph_tools/verify_layout.py": "060245109105687f9237798d9928736051335bfa153b863f888cc45540359438",
+    "legacy/query_planner_v2/.env.example": "89bed8c2147f2fcabcf764054d31aac4e6fb5b56e4368841bbb74d46660750fd",
+    "legacy/query_planner_v2/LICENSE": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+    "legacy/query_planner_v2/README.md": "bd1e19d30b708905eb285ea33f9bca6d07d2abba8fd6a3eafb6f2922f098367c",
+    "legacy/query_planner_v2/adaptive_evidence/__init__.py": "bffb96293a3ee82cfe3742c52d9a91e8ff65e60394b09128088d6d25cfb4ebbf",
+    "legacy/query_planner_v2/adaptive_evidence/core.py": "8bf823550c55dbd9c0048f55dc6d43448387450591204d0513e3717a3462579f",
+    "legacy/query_planner_v2/adaptive_evidence/encoder.py": "9d780f9179c00168a68d75b74855ff6b07eb655f2ed106fd2c97b5ab9c3b78ae",
+    "legacy/query_planner_v2/adaptive_evidence/evidence_windows.py": "6995c2b015b75bcb626650e73612ce5e948cc8fdc04e58ca18d534ed0b978166",
+    "legacy/query_planner_v2/adaptive_evidence/focused_packing.py": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+    "legacy/query_planner_v2/adaptive_evidence/passage_packing.py": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+    "legacy/query_planner_v2/adaptive_evidence/retrieval_views.py": "25876968cd5029ac9da816fc459ed5a427f8eed24cc4901540dadef03746bf91",
+    "legacy/query_planner_v2/adaptive_evidence/source_links.py": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+    "legacy/query_planner_v2/adaptive_evidence/source_prior.py": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+    "legacy/query_planner_v2/gaptrail/__init__.py": "62844100b9b37f5df9a33cbc54264f1098b3b6400aae3f9635d611f54be308f4",
+    "legacy/query_planner_v2/gaptrail/api.py": "17e9cfd0b99cb573d2ab6f1746b9132f1f17afcfe96ee809f7241e06209dfaf9",
+    "legacy/query_planner_v2/gaptrail/planner.py": "e932c50acc64cfb08dba3a7b366ede6434397dbc3ffb59616af8af17bd6b27be",
+    "legacy/query_planner_v2/gaptrail/runtime.py": "a63650d6376bbb7ba7d1b1b9c78418bf9ee5d1e41d6252bd56e6a05b2fb35721",
+    "legacy/query_planner_v2/pyproject.toml": "540d30de00df3398baf878c6f70b84f03783860fd9aab352d6b09946e84f3055",
+    "legacy/query_planner_v2/requirements.txt": "3c7a8ccc2006afe22a494bdbba85d1f0b65e60371d67eca7d35a37d01f3790ab",
+    "legacy/query_planner_v2/scripts/run_local.py": "000ee200008b3815c50ec4d50738cb07525a66ea513cb95245d9219b25f5813d",
+    "legacy/query_planner_v2/tests/test_service.py": "e7952c6e05135c656a32bc16737dcec836d28c96cc81bf4b822b459b04c98233",
+    "operator_guide/RUN_GUIDE.zh-CN.md": "84e57ee601c0370c1423a9cc6a7e6421da36a51985b8352d9b4d86a2092baaac",
+    "releases/graph-v4-m05/.dockerignore": "5883da00290e2c59528b87aca2de6dc9451846da45d1ba9b26e88918a0ec5425",
+    "releases/graph-v4-m05/.gitattributes": "9a5b3e8c93ebcd35a580f2c2cf3b51cad2f4e5c1514a6984f454f36b355dacd8",
+    "releases/graph-v4-m05/.gitignore": "32a83f758f5e34a3b4dcff75f738b9b03d0b4bb399bfd756bcaa6e9d2345b347",
+    "releases/graph-v4-m05/Caddyfile": "dd935aa3add2add6878a2a559feacbfd2c653016d7332bb59558f6d5ed3187b2",
+    "releases/graph-v4-m05/Dockerfile": "5900989ff735dd51efe33c11e3254ec08200fd3fc8b0dfb9c2c9b04ec4a6cfde",
+    "releases/graph-v4-m05/LICENSE": "5e840be8e2574ddc674ea9fac785d991d2aad1327a4a9a0f560a8cb57668c530",
+    "releases/graph-v4-m05/M05_MANIFEST.json": "9562860fe731d527fb3935ca9462872a25e174e511ce81854b3130976e04d2bd",
+    "releases/graph-v4-m05/OPERATIONS.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/PROVENANCE.md": "59d662921570685fd5c0dc1fc2f884f11240de2394e3c62c0695b9020c1c2bed",
+    "releases/graph-v4-m05/README.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/SHA256SUMS.json": "1164ff02d15fc48c9cf8af389e731d03cb304ef688d7372da9a5329ab10c0cd0",
+    "releases/graph-v4-m05/SUBMISSION.md": "6d3b62c30302e89b6468de28c85f747f70e484d4082de7b29cc30e0b99780d3e",
+    "releases/graph-v4-m05/adaptive_evidence/__init__.py": "3c5a56bb0c56bd81c4da918104a8fdbc5c155b828c5176331dcdc677052af94c",
+    "releases/graph-v4-m05/adaptive_evidence/api.py": "4f4a2e4d2c6ef61ffe3fe20133c766922d76d8ef4c7f200b6075bb0abab0cb72",
+    "releases/graph-v4-m05/adaptive_evidence/block_graph.py": "ccdf76afcdbb259019feced3dbd3c6fdb7ffc9aa43b88ef08946e708cdecc3fd",
+    "releases/graph-v4-m05/adaptive_evidence/block_selection.py": "954f7ca2ecb9e6d67a08c846d598465e4707929d1b0e01f35c9ea92938ebaeca",
+    "releases/graph-v4-m05/adaptive_evidence/core.py": "54bab2b16c48ea24db38eb663094eefc7d04b3053c94ca4099a03bf26105e4c0",
+    "releases/graph-v4-m05/adaptive_evidence/encoder.py": "775a9d45ba261d666ab3d5ea026ba9ab0c6c69107cd289b481277fe04f5c1b13",
+    "releases/graph-v4-m05/adaptive_evidence/evidence_windows.py": "583894c955b56f389cf9af4c71a9d5379ec663743ecd0b4bc2d05ac6b6148796",
+    "releases/graph-v4-m05/adaptive_evidence/focused_packing.py": "4bac95a03cca7aa65807f24977b7441ddef48b83c4510da16cdfbd2d71d00116",
+    "releases/graph-v4-m05/adaptive_evidence/passage_packing.py": "e0048dae8c6e6368ede7219602c24557ce524e1bd5ce6c2fc201d9ec1e49bd03",
+    "releases/graph-v4-m05/adaptive_evidence/remote_encoder.py": "daf3482fd9232598138a5ce24b2998d706f97a7de53329cb02a191495a0c1b5c",
+    "releases/graph-v4-m05/adaptive_evidence/retrieval_views.py": "21b13f6f545df7ed819b2362dbc38cd78dfd945e0f6ddfd694a16182fac6896d",
+    "releases/graph-v4-m05/adaptive_evidence/source_links.py": "19798eb431e25c57f8f71a2524da70ac482a1e4353f1ba426bf7c0bec49b4bf0",
+    "releases/graph-v4-m05/adaptive_evidence/source_prior.py": "01321f13642f129dd3ff4c5be27068cff07e6096b0a9b5edd3e324adad3d4e37",
+    "releases/graph-v4-m05/compose.yaml": "bddb187f11c7bffa82b64b08efbe9767adf0e995b17bab5757904394e62cc857",
+    "releases/graph-v4-m05/env.example": "19796ba5855531864c0919fef3186124f3169f24165bc3bcae59ae12200dd8db",
+    "releases/graph-v4-m05/frozen-runtime.sha256": "8d99b79265e91e67fefab9b9126200070410c85bcd35d9c9428f3334ef3df0b8",
+    "releases/graph-v4-m05/frozen-runtime.tar.gz": "fe62b9e5203c3556fc46de6b3034dc7e6d75fe797c4fa83369b77821aec3a619",
+    "releases/graph-v4-m05/m05_graph_entry.py": "3516dd5c3f40b6bcd3caca09ec5edee64ef99b976af117a091089a007e8d4b2c",
+    "releases/graph-v4-m05/package_source.py": "3b35a2562c5eba9160f12928ab147643eb2981b707450347a159a2e10e2cc734",
+    "releases/graph-v4-m05/preflight.py": "e011e272ae35d5532ab24bb5fda5b89f7c5f730f57c51bd4d16e94edf27d79c2",
+    "releases/graph-v4-m05/requirements.txt": "8c62249b9350751d779a1218cfb783f69bf4557d70d4820f874fb11004658628",
+    "releases/graph-v4-m05/start_local.ps1": "43ed7f012793b1f2fb3624954cbcbf92f1f16cd0c8072b26576f782d3b95d41d",
+    "releases/graph-v4-m05/tests/test_adaptive.py": "a3b8148a37a663d616245385cf21896bb8e8ef3b5d75d78ff1c63ee5ee90e6a6",
+    "releases/graph-v4-m05/tests/test_answer_only.py": "cb31d1ccd8dbc68966231e78073db2bd0572d43b46da2c884451e94c889c9780",
+    "releases/graph-v4-m05/tests/test_coherent_sources.py": "92d715071082ca16e6340b2911666a008b9d4f44675a1370f8dee469157c1049",
+    "releases/graph-v4-m05/tests/test_contract.py": "62ac861c4e372598b1b9c51697d538f0b946edfc6f4b660f4d12edf8ab99f63e",
+    "releases/graph-v4-m05/tests/test_evidence_budget.py": "c41047949df0e9b65d38056de3607786ba7660a103c2b0ac3db5779645d6cd7d",
+    "releases/graph-v4-m05/tests/test_evidence_windows.py": "86607b26a64d1f401dd301038937b11399b238efc14f93c2c51a0ef6e5a5d81e",
+    "releases/graph-v4-m05/tests/test_focused_packing.py": "1c68b0a961201c5cd7125b7914afa5dcdc2d498dc501741f18fb532f128b5c72",
+    "releases/graph-v4-m05/tests/test_query_documents.py": "e0e0d1218cf7fc99c30ae682c08ce0794e945174e46e523478c2e52a6e2d3c28",
+    "releases/graph-v4-m05/tests/test_remote_encoder.py": "cec5a61eac457dd3942e0c28085cf292cf60f352d9b9945643a3b1e09301db9b",
+    "releases/graph-v4-m05/tests/test_retrieval_views.py": "ab77e7a6454546ba5124e418f804983e00df59b68b894a33f0d0a22b9647b4d0",
+    "operator_guide/GRAPH_WORKSPACE.md": "5e0ac8d56ff2a661e5dff975a97c69ba5ab4839f3bcbad8ccc6edbb32be6e609"
+  }
+}

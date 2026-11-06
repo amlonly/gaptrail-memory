@@ -5,3 +5,7 @@
 *.ps1 text eol=crlf
 adaptive_evidence/** -text
 gaptrail/planner.py -text
+
+# Preserve original Python bytes after development relocation.
+legacy/query_planner_v2/adaptive_evidence/** -text
+legacy/query_planner_v2/gaptrail/planner.py -text

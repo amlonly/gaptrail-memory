@@ -22,3 +22,9 @@ dist/
 build/
 *.egg-info/
 .pytest_cache/
+
+# Development package build products
+*.egg-info/
+build/
+dist/
+__pycache__/

@@ -1,3 +1,7 @@
+# 历史 v2 研究指南
+
+本文件仅描述旧 v2/Qwen 本地研究，不是当前图 V4 的部署或 Full 运行指南。当前版本见仓库根目录 RUN_GUIDE.zh-CN.md。
+
 # GapTrail Memory 运行指南
 
 ## 1. 准备资源
@@ -15,7 +19,7 @@
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r legacy/query_planner_v2/requirements.txt
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -26,7 +30,7 @@ python -m venv .venv
 将下面的四个示例路径替换为你的真实路径：
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/run_local.py `
+.\.venv\Scripts\python.exe legacy/query_planner_v2/scripts/run_local.py `
   --llama-server "C:/models/llama-server.exe" `
   --gguf "C:/models/Qwen3.5-4B-Q4_K_M.gguf" `
   --bge "C:/models/bge-small-en-v1.5" `
@@ -34,7 +38,7 @@ python -m venv .venv
   --no-auth
 ```
 
-启动器先检查文件和端口，再原子创建 GPU 锁目录并写 owner/nonce，之后启动自己拥有的模型和 API。处于原研究工作区时自动使用 `competition/research/parallel-seven-20261030/local-model.lock`；独立克隆默认使用 `.runtime/local-model.lock`。多人共用 GPU 时以 `--lock-dir "共享绝对路径"` 指定统一锁。锁被占用时等待，不删除他人的锁或关闭已有服务。
+启动器先检查文件和端口，再原子创建 GPU 锁目录并写 owner/nonce，之后启动自己拥有的模型和 API。默认锁路径由启动器确定；独立运行可显式设置锁目录。多人共用 GPU 时以 `--lock-dir "共享绝对路径"` 指定统一锁。锁被占用时等待，不删除他人的锁或关闭已有服务。
 
 默认模型地址为 `http://127.0.0.1:18405`，API 地址为 `http://127.0.0.1:8000`，均只绑定 loopback。可通过 `--model-port`、`--api-port` 显式修改空闲端口。读取 `.runtime/model.log` 和 `.runtime/api.log` 排查启动问题；端口已占用时启动器会停止并报错。
 
@@ -64,6 +68,6 @@ Invoke-RestMethod http://127.0.0.1:8000/search -Method Post -ContentType 'applic
 
 ## 6. 研究复现范围
 
-CPU 检查可以在本仓库独立复现，源文件哈希可与 `SOURCE_MANIFEST.json` 核对。完整 144 题实验依赖另行保存的数据集、冻结 cohort 和原生评分代码；这些材料没有随本仓库发布。原工作区内从根目录运行 `models/.venv/Scripts/python.exe competition/research/parallel-seven-20261030/05-query-planning/v2-novel-gaps/recover_wait_fast.py`，完成后运行同目录的 `finalize_recovery.py` 做 CPU 汇总。既有成功请求会按冻结身份复用；新的独立实跑应先另建、冻结实验目录，不能删除历史失败证据冒充同一轮。
+CPU 检查可以在本仓库独立复现，源文件哈希可与 `SOURCE_MANIFEST.json` 核对。完整 144 题实验依赖另行保存的数据集、冻结 cohort 和原生评分代码；这些材料没有随本仓库发布。完整实验需由材料持有者按对应冻结入口运行并汇总。既有成功请求会按冻结身份复用；新的独立实跑应先另建、冻结实验目录，不能删除历史失败证据冒充同一轮。
 
-本仓库不包含官方提交或自动晋升入口。研究与封装的验证边界、逐数据集成绩及真实失败类型见 `research/RESULTS.md`。
+本仓库不包含官方提交或自动晋升入口。研究与封装的验证边界、逐数据集成绩及真实失败类型见 `experiments/RESULTS.md`。
